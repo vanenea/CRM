@@ -39,26 +39,26 @@
 		</property>
 		
 		<!-- 引入映射文件 -->
-		<property name="mappingResources">
+		<!--<property name="mappingResources">
 			<list>
 				<value>/User.hbm.xml</value>
 			</list>
-		</property>
+		</property>-->
 	</bean>
 	
 	<!-- 配置Action -->
-	<bean id="userAction" class="UserAction" scope="prototype">
-		<property name="userService" ref="userService"/>
+	<bean id="userAction" class="com.chen.web.action.UserAction" scope="prototype">
+		<!--<property name="userService" ref="userService"/>-->
 	</bean>
 	
 	<!-- 配置Service -->
-	<bean id="userService" class="UserServiceImpl">
-		<property name="userDao" ref="userDao"/>
+	<bean id="userService" class="com.chen.service.impl.UserServiceImpl">
+		<!--<property name="userDao" ref="userDao"/>-->
 	</bean>
 	
 	<!-- 配置DAO -->
-	<bean id="userDao" class="UserDaoImpl">
-		<property name="sessionFactory" ref="sessionFactory"/>
+	<bean id="userDao" class="com.chen.dao.impl.UserDaoImpl">
+		<!--<property name="sessionFactory" ref="sessionFactory"/>-->
 	</bean>
 	
 	<!-- 配置事务管理器 -->
