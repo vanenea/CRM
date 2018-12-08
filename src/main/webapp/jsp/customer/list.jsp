@@ -1,13 +1,14 @@
 ﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<TITLE>联系人列表</TITLE> 
+<TITLE>客户列表</TITLE> 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <LINK href="${pageContext.request.contextPath }/css/Style.css" type=text/css rel=stylesheet>
 <LINK href="${pageContext.request.contextPath }/css/Manage.css" type=text/css
-	rel=stylesheet>
+      rel=stylesheet>
 <script type="text/javascript" src="${pageContext.request.contextPath }/js/jquery-1.4.4.min.js"></script>
 <SCRIPT language=javascript>
 	function to_page(page){
@@ -23,7 +24,7 @@
 </HEAD>
 <BODY>
 	<FORM id="customerForm" name="customerForm"
-		action="${pageContext.request.contextPath }/linkmanServlet?method=list"
+		action="${pageContext.request.contextPath }/customerServlet?method=list"
 		method=post>
 		
 		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
@@ -41,12 +42,12 @@
 		<TABLE cellSpacing=0 cellPadding=0 width="98%" border=0>
 			<TBODY>
 				<TR>
-					<TD width=15 background="${pageContext.request.contextPath }/images/new_022.jpg"><IMG
-						src="${pageContext.request.contextPath }/images/new_022.jpg" border=0></TD>
+					<TD width=15 background=${pageContext.request.contextPath><IMG
+                            src="${pageContext.request.contextPath }/images/new_022.jpg" border=0></TD>
 					<TD vAlign=top width="100%" bgColor=#ffffff>
 						<TABLE cellSpacing=0 cellPadding=5 width="100%" border=0>
 							<TR>
-								<TD class=manageHead>当前位置：联系人管理 &gt; 联系人列表</TD>
+								<TD class=manageHead>当前位置：客户管理 &gt; 客户列表</TD>
 							</TR>
 							<TR>
 								<TD height=2></TD>
@@ -60,9 +61,9 @@
 										<TABLE cellSpacing=0 cellPadding=2 border=0>
 											<TBODY>
 												<TR>
-													<TD>联系人名称：</TD>
+													<TD>客户名称：</TD>
 													<TD><INPUT class=textbox id=sChannel2
-														style="WIDTH: 80px" maxLength=50 name="lkmName"></TD>
+														style="WIDTH: 80px" maxLength=50 name="custName"></TD>
 													
 													<TD><INPUT class=button id=sButton2 type=submit
 														value=" 筛选 " name=sButton2></TD>
@@ -80,29 +81,30 @@
 											<TBODY>
 												<TR
 													style="FONT-WEIGHT: bold; FONT-STYLE: normal; BACKGROUND-COLOR: #eeeeee; TEXT-DECORATION: none">
-													<TD>联系人名称</TD>
-													<TD>性别</TD>
-													<TD>办公电话</TD>
+													<TD>客户名称</TD>
+													<TD>客户级别</TD>
+													<TD>客户来源</TD>
+													<TD>客户所属行业</TD>
+													<TD>电话</TD>
 													<TD>手机</TD>
 													<TD>操作</TD>
 												</TR>
-												<c:forEach items="${list }" var="linkman">
+												<s:iterator var="c" value="list">
 												<TR
 													style="FONT-WEIGHT: normal; FONT-STYLE: normal; BACKGROUND-COLOR: white; TEXT-DECORATION: none">
-													<TD>${linkman.lkmName }</TD>
-													<TD>${linkman.lkmGender }</TD>
-													<TD>${linkman.lkmPhone }</TD>
-													<TD>${linkman.lkmMobile }</TD>
-													
+													<TD><s:property value="#c.cust_name"/></TD>
+													<TD><s:property value="#c.cust_level"/></TD>
+													<TD><s:property value="#c.cust_source"/></TD>
+													<TD><s:property value="#c.cust_industry"/></TD>
+													<TD><s:property value="#c.cust_phone"/></TD>
+													<TD><s:property value="#c.cust_mobile"/></TD>
 													<TD>
-													<a href="${pageContext.request.contextPath }/linkmanServlet?method=edit&lkmId=${linkman.lkmId}">修改</a>
+													<a href="${pageContext.request.contextPath }/">修改</a>
 													&nbsp;&nbsp;
-													<a href="${pageContext.request.contextPath }/linkmanServlet?method=delete&lkmId=${linkman.lkmId}">删除</a>
+													<a href="${pageContext.request.contextPath }/">删除</a>
 													</TD>
 												</TR>
-												
-												</c:forEach>
-
+												</s:iterator>
 											</TBODY>
 										</TABLE>
 									</TD>
@@ -116,7 +118,7 @@
 												,每页显示
 												<select name="pageSize">
 												
-												<option value="1" <c:if test="${pageSize==1 }">selected</c:if>>1</option>
+												<option value="15" <c:if test="${pageSize==1 }">selected</c:if>>1</option>
 												<option value="30" <c:if test="${pageSize==30 }">selected</c:if>>30</option>
 												</select>
 												条
@@ -135,7 +137,7 @@
 						</TABLE>
 					</TD>
 					<TD width=15 background="${pageContext.request.contextPath }/images/new_023.jpg"><IMG
-						src="${pageContext.request.contextPath }/images/new_023.jpg" border=0></TD>
+                            src="${pageContext.request.contextPath }/images/new_023.jpg" border=0></TD>
 				</TR>
 			</TBODY>
 		</TABLE>
@@ -145,7 +147,7 @@
 					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_024.jpg"
 						border=0></TD>
 					<TD align=middle width="100%"
-						background="${pageContext.request.contextPath }/images/new_025.jpg" height=15></TD>
+                        background="${pageContext.request.contextPath }/images/new_025.jpg" height=15></TD>
 					<TD width=15><IMG src="${pageContext.request.contextPath }/images/new_026.jpg"
 						border=0></TD>
 				</TR>

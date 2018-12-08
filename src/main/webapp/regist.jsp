@@ -32,7 +32,7 @@ style="LEFT: 0px; POSITION: absolute; TOP: 0px; BACKGROUND-COLOR: #0066ff"></DIV
     <TD style="HEIGHT: 105px"><IMG src="${ pageContext.request.contextPath }/images/login_1.gif" 
   border=0></TD></TR>
   <TR>
-    <TD background=${ pageContext.request.contextPath }/images/regist_bt.png height=300>
+    <TD background="height=300">
       <TABLE height=300 cellPadding=0 width=900 border=0>
         <TBODY>
         <TR>
@@ -77,10 +77,10 @@ style="LEFT: 0px; POSITION: absolute; TOP: 0px; BACKGROUND-COLOR: #0066ff"></DIV
               <TR>
                 <TD></TD>
                 <TD>
-                <INPUT id=btn 
-                  style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px" 
-                  onclick='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("btn", "", true, "", "", false, false))' 
-                  type=image src="${ pageContext.request.contextPath }/images/regist_button.gif" name=btn> 
+                <INPUT id=btn
+                       style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px"
+                       onclick='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("btn", "", true, "", "", false, false))'
+                       type=image src="${ pageContext.request.contextPath }/images/regist_button.gif" name=btn>
               </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
   <TR>
     <TD><IMG src="${ pageContext.request.contextPath }/images/login_3.jpg" 
