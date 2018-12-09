@@ -32,7 +32,7 @@ style="LEFT: 0px; POSITION: absolute; TOP: 0px; BACKGROUND-COLOR: #0066ff"></DIV
     <TD style="HEIGHT: 105px"><IMG src="${ pageContext.request.contextPath }/images/login_1.gif" 
   border=0></TD></TR>
   <TR>
-    <TD background="height=300">
+    <TD background="images/regist_bt.png" height="300">
       <TABLE height=300 cellPadding=0 width=900 border=0>
         <TBODY>
         <TR>
@@ -44,11 +44,12 @@ style="LEFT: 0px; POSITION: absolute; TOP: 0px; BACKGROUND-COLOR: #0066ff"></DIV
               <TBODY>
               <TR>
                 <TD style="HEIGHT: 28px" width=80> 用户账号：</TD>
-                <TD style="HEIGHT: 28px" width=150><INPUT id=txtName 
+                <TD style="HEIGHT: 28px" width=150><INPUT
                   style="WIDTH: 130px" name="user_code"></TD>
-                <TD style="HEIGHT: 28px" width=370><SPAN 
-                  id=RequiredFieldValidator3 
-                  style="FONT-WEIGHT: bold; VISIBILITY: hidden; COLOR: white">请输入登录名</SPAN></TD></TR>
+                <TD style="HEIGHT: 28px" width=370><SPAN
+
+                  style="FONT-WEIGHT: bold; VISIBILITY: hidden; COLOR: white">请输入登录名</SPAN
+></TD></TR>
               <TR>
                 <TD style="HEIGHT: 28px">登录密码：</TD>
                 <TD style="HEIGHT: 28px"><INPUT id=txtPwd style="WIDTH: 130px" 
@@ -79,7 +80,7 @@ style="LEFT: 0px; POSITION: absolute; TOP: 0px; BACKGROUND-COLOR: #0066ff"></DIV
                 <TD>
                 <INPUT id=btn
                        style="BORDER-TOP-WIDTH: 0px; BORDER-LEFT-WIDTH: 0px; BORDER-BOTTOM-WIDTH: 0px; BORDER-RIGHT-WIDTH: 0px"
-                       onclick='javascript:WebForm_DoPostBackWithOptions(new WebForm_PostBackOptions("btn", "", true, "", "", false, false))'
+                       onclick=''
                        type=image src="${ pageContext.request.contextPath }/images/regist_button.gif" name=btn>
               </TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></TD></TR>
   <TR>
