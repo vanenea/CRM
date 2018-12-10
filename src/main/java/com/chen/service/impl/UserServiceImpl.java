@@ -13,6 +13,8 @@ public class UserServiceImpl implements UserService {
     private UserDao userDao;
 
     public void regist(User user) {
+        user.setUser_state("1");
+        user.setUser_code("m0001");
         userDao.save(user);
     }
 }
